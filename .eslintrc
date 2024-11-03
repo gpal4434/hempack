@@ -1,0 +1,8 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "plugin:@tanstack/query/recommended"],
+  "plugins": ["tailwindcss", "@tanstack/query"],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "off"
+  }
+}
