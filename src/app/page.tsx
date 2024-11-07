@@ -1,12 +1,14 @@
 import Intro from "@/components/main/Intro";
-import Works from "@/components/main/Works";
+import Works from "@/components/works/Works";
 
 export default function Home() {
     return (
         <>
             <main className="wrap">
                 <Intro />
-                <Works />
+                <div className="bg-sub">
+                    <Works />
+                </div>
             </main>
         </>
     );

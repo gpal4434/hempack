@@ -51,7 +51,7 @@ const Intro = () => {
                     </h3>
                 </div>
             </div>
-            <div className="relative flex basis-[50%] flex-col items-center justify-between bg-[#c4d3a7]">
+            <div className="bg-sub relative flex basis-[50%] flex-col items-center justify-between">
                 <h3 className={`pt-32 text-center ${IBMPlexSansKR.className} text-lg`}>
                     <span className="block pb-2 text-6xl">👩🏻‍💻</span>
                     <span className="font-bold">UI/UX 디자인</span> 역량을 갖춘
