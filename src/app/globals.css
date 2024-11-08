@@ -2,30 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --background: #ffffff;
-    --foreground: #292626;
-    --text: #333;
-    --primary: #a9da50;
-}
-
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
-} */
-
-body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    color: vat(--text);
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+.bg:after {
+    content: "Flexible Developer HYEMI ";
+    font-size: 7vw;
+    font-weight: bold;
+    opacity: 0.05;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    text-align: center;
 }
