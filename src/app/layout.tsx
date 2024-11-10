@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${IBMPlexSansKR.className} ${roboto.className}`}>
-            <body>{children}</body>
+            <body suppressHydrationWarning={true}>{children}</body>
         </html>
     );
 }

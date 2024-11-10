@@ -1,105 +1,141 @@
 "use client";
 
 import Image from "next/image";
-import { IBMPlexSansKR, prompt } from "../../app/fonts";
-import profile from "@/public/images/profile.png";
-import photoshop from "@/public/images/photoshop.png";
-import react from "@/public/images/react.png";
-import next from "@/public/images/nextjs.png";
-import css from "@/public/images/css.png";
-import html from "@/public/images/html.png";
-import figma from "@/public/images/figma.png";
-import javascript from "@/public/images/javascript.png";
-import styles from "@/app/styles.module.css";
-import { useEffect, useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
+import photoshop from "/public/images/photoshop.png";
+import react from "/public/images/react.png";
+import next from "/public/images/nextjs.png";
+import css from "/public/images/css.png";
+import html from "/public/images/html.png";
+import figma from "/public/images/figma.png";
+import javascript from "/public/images/javascript.png";
+import { prompt } from "@/app/fonts";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const Intro = () => {
-    const hempackRef = useRef(null);
-    const textRef = useRef(null);
-
-    gsap.to(hempackRef.current, { duration: 1, scrambleText: "THIS IS NEW TEXT" }); //or customize things:
-
-    gsap.to(hempackRef.current, {
-        duration: 1,
-        scrambleText: {
-            text: "THIS IS NEW TEXT",
-            chars: "XO",
-            revealDelay: 0.5,
-            speed: 0.3,
-            newClass: "myClass",
-        },
-    });
-
+const Intro = ({ hover, setHover }) => {
     return (
-        <section className="flex h-screen">
-            <div className="flex h-full w-screen flex-grow flex-col justify-center gap-1 p-10">
-                <div ref={hempackRef} className={`text-9xl font-bold text-[#333] ${prompt.className} ${styles.label}`}>
-                    <div className="introduce__title">
-                        <span className="introduce__title-changer" ref={textRef}>
-                            <span className="introduce__title-changer-item">Flexible</span>
-                            <span className="introduce__title-changer-item" aria-hidden="true">
-                                Adaptable
-                            </span>
-                            <span className="introduce__title-changer-item" aria-hidden="true">
-                                Versatile
-                            </span>
-                        </span>
-                        <br />
-                        Developer
+        <>
+            <button
+                onClick={() => setHover(false)}
+                className="fixed right-5 top-5 z-[9999] overflow-hidden text-5xl text-white hover:text-gray-600"
+            >
+                <IoIosCloseCircleOutline />
+            </button>
+            <div
+                className={`fixed right-0 top-0 z-[999] flex h-screen w-screen items-start justify-center overflow-hidden bg-white`}
+            >
+                <div className="flex h-full w-screen flex-grow flex-col justify-center gap-1 p-10">
+                    <div className={`text-9xl font-bold text-[#333] ${prompt.className} label`}>HEMPACK</div>
+                    <div className="flex gap-3 text-xl">
+                        <h5 className="flex gap-1">
+                            <span>이름</span>
+                            <span className="font-bold">김혜미</span>
+                        </h5>
+                        <span> · </span>
+                        <h5 className="flex gap-1">
+                            <span>생년월일</span>
+                            <span className="font-bold">1993-05-29</span>
+                        </h5>
+                        <span> · </span>
+                        <h5 className="flex gap-1">
+                            <span>MBTI</span>
+                            <span className="font-bold">ENFJ</span>
+                        </h5>
                     </div>
-                </div>
-                {/* <h5 ref={textRef} className={`text-xl text-[#333] ${prompt.className}`}>
-                    Hi! This is my project packages.
-                    <br />
-                    Designing UI/UX and Mark up for over 6 years as a web publisher
-                    <br />
-                </h5> */}
+                    <div className="flex gap-3 text-xl">
+                        <h5 className="flex gap-1">
+                            <span>최종 학력</span>
+                            <span className="font-bold">세종대학교 디지털콘텐츠학과(2017 졸업)</span>
+                        </h5>
+                        <span> · </span>
 
-                <div className="flex gap-2 pt-3">
-                    <div className={styles.skillItem}>
-                        <Image src={javascript} width={30} className="object-contain" alt="javascript" />
+                        <h5 className="flex gap-1">
+                            <span>주소</span>
+                            <span className="font-bold">서울 양천구</span>
+                        </h5>
                     </div>
-                    <div className={styles.skillItem}>
-                        <Image src={css} width={30} className="object-contain" alt="css" />
+
+                    <div className="flex gap-3 text-xl">
+                        <h5 className="flex gap-1">
+                            <span>총 경력</span>
+                            <span className="font-bold">총 6년 6개월</span>
+                        </h5>
                     </div>
-                    <div className={styles.skillItem}>
-                        <Image src={html} width={30} className="object-contain" alt="html" />
+                    <div className="pl-16 font-thin">
+                        <p>스포피드(2년 6개월 재직중, 메인 퍼블리셔 + UI 개발 + 서브 프론트엔드 개발)</p>
+                        <p>순수교육(2년 4개월, 메인 퍼블리셔)</p>
+                        <p>펜타온, 벨모어(1년 10개월, 메인 퍼블리셔)</p>
+                        <div className="flex gap-2 py-3">
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={javascript} width={30} className="object-contain" alt="javascript" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={css} width={30} className="object-contain" alt="css" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={html} width={30} className="object-contain" alt="html" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={react} width={30} className="object-contain" alt="react" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={next} width={30} className="object-contain" alt="next" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={figma} width={30} className="object-contain" alt="figma" />
+                            </div>
+                            <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                <Image src={photoshop} width={30} className="object-contain" alt="photoshop" />
+                            </div>
+                        </div>
                     </div>
-                    <div className={styles.skillItem}>
-                        <Image src={react} width={30} className="object-contain" alt="react" />
-                    </div>
-                    <div className={styles.skillItem}>
-                        <Image src={next} width={30} className="object-contain" alt="next" />
-                    </div>
-                    <div className={styles.skillItem}>
-                        <Image src={figma} width={30} className="object-contain" alt="figma" />
-                    </div>
-                    <div className={styles.skillItem}>
-                        <Image src={photoshop} width={30} className="object-contain" alt="photoshop" />
+
+                    <div className="flex gap-3 text-xl">
+                        <h5 className="flex gap-1">
+                            <span>연락처</span>
+                            <span className="font-bold">gpal4434@naver.com</span>
+                        </h5>
+                        <span> · </span>
+                        <h5 className="flex gap-1">
+                            <span className="flex-shrink-0">자격증</span>
+                            <span className="flex-wrap text-base font-thin">
+                                정보처리기사(2018)
+                                <br />
+                                웹디자인기능사(2018)
+                                <br />
+                                GTQ포토샵1급(2017)
+                                <br />
+                                정보기기운용기능사(2011)
+                                <br />
+                                컴퓨터그래픽스운용기능사(2010)
+                            </span>
+                        </h5>
                     </div>
                 </div>
-                <div className="absolute bottom-20">
-                    <h3 className={`flex items-center gap-3 text-2xl font-semibold ${prompt.className}`}>
-                        Contact <span className="text-base font-thin">gpal4434@naver.com</span>
+                <div className="relative flex h-screen basis-[50%] items-start justify-center bg-black">
+                    <h3 className={`pt-36 text-center leading-[3] text-white xl:text-xl 2xl:text-3xl`}>
+                        <span className="block pb-2 text-6xl">🥇</span>
+                        <span className="font-bold">UI/UX 디자인</span> 역량을 갖춘
+                        <span className="font-bold"> Web Publisher</span>
+                        <br />
+                        <span className="font-bold">Next.js</span> 프론트엔드 개발 역량 확장 중!
                     </h3>
                 </div>
+                <div className={`absolute bottom-5 right-14 h-60 w-60 ${hover ? "animate-scale" : undefined}`}>
+                    <video
+                        fill
+                        preload="true"
+                        style={{ borderRadius: 9999 }}
+                        autoPlay
+                        loop
+                        muted
+                        className="h-full w-full"
+                        onMouseEnter={() => setHover(true)}
+                    >
+                        <source src="/my_emoji4.mp4" type="video/mp4" />
+                    </video>
+                </div>
             </div>
-            <div className="relative flex basis-[50%] flex-col items-center justify-between bg-sub">
-                <h3 className={`pt-32 text-center ${IBMPlexSansKR.className} text-lg`}>
-                    <span className="block pb-2 text-6xl">👩🏻‍💻</span>
-                    <span className="font-bold">UI/UX 디자인</span> 역량을 갖춘
-                    <span className="font-bold"> Web Publisher</span>
-                    <br />
-                    <span className="font-bold">React / Next.js</span> 프론트엔드 역량 확장 중!
-                </h3>
-                <Image src={profile} alt="프로필 사진" />
-            </div>
-        </section>
+        </>
     );
 };
 

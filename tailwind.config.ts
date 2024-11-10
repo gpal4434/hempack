@@ -1,3 +1,4 @@
+import { BiBorderRadius } from "react-icons/bi";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,26 +10,40 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: "#a9da50",
+                primary: "#ffd519",
                 sub: "#c4d3a7",
                 text: "#333",
                 border: "#d9d9d9",
                 surface: "#f5f5f5",
             },
-            // backgroundImage: {
-            //   "gradient-yellowred": "linear-gradient(90deg, #FF616A 0%, #FFC837 100%)",
-            //   "mobile-home": "url('./assets/(파일명).png')"
-            // },
-            // fontFamily: {
-            //   dmsans: ["DM Sans", "sans-serif"],
-            //   montserrat: ["Montserrat", "sans-serif"]
-            // },
-            // content: {
-            //   evolvetext: "url('./assets/(파일명).png')",
-            //   abstractwaves: "url('./assets/(파일명).png')",
-            //   sparkles: "url('./assets/(파일명).png')",
-            //   circles: "url('./assets/(파일명).png')",
-            // },
+            backgroundImage: {
+                "gradient-yellowred": "linear-gradient(90deg, #000 0%, #FFC837 100%)",
+                "mobile-home": "url('./assets/(파일명).png')",
+            },
+            animation: {
+                expand: "opacity 0.1s ease-in-out forwards",
+                scale: "scale 0.2s ease-in-out forwards",
+            },
+            keyframes: {
+                opacity: {
+                    "0%": {
+                        opacity: 0,
+                    },
+                    "100%": {
+                        opacity: 1,
+                    },
+                },
+                scale: {
+                    "0%": {
+                        width: "15rem",
+                        height: "15rem",
+                    },
+                    "100%": {
+                        width: "26vw",
+                        height: "50vh",
+                    },
+                },
+            },
         },
     },
     plugins: [],

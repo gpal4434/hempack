@@ -1,5 +1,12 @@
 import { prompt } from "@/app/fonts";
 import Image from "next/image";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 interface DataValueProps {
     src: string;
@@ -10,31 +17,82 @@ interface DataValueProps {
     date: string;
     color: string;
     flex: string;
+    bg: string;
 }
 interface DataProps {
     data: DataValueProps;
 }
 
 const Item = ({ data }: DataProps) => {
+    const workRef = useRef(null);
+
+    useEffect(() => {
+        const el = workRef.current;
+
+        gsap.fromTo(
+            el,
+            { opacity: 0, y: 200, scale: 0.9 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 1,
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 98%",
+                    end: "top 50%",
+                    scrub: true,
+                },
+            }
+        );
+    }, []);
+
     return (
         <>
             {/* {data.map((item: DataValueProps) => ( */}
-            <div key={data.key} className={`flex-1 flex-col gap-2 rounded-3xl bg-white shadow-2xl`}>
+            <div
+                ref={workRef}
+                className={`group relative mb-24 flex flex-[1_0_40%] cursor-pointer flex-col gap-2 overflow-hidden rounded-3xl bg-white shadow-2xl transition-all duration-200 ease-in-out even:-top-56`}
+            >
                 <div className="p-9">
-                    <h3 className={`text-4xl font-bold text-text ${prompt.className}`}>{data.title}</h3>
-                    <div className="flex gap-1">
-                        {data.skill.map((v, i) => (
-                            <span key={i} className="rounded-full bg-surface">
-                                {v}
-                            </span>
-                        ))}
+                    <h5
+                        className={`${prompt.className} text-right transition-all delay-100 duration-200 group-hover:text-white`}
+                    >
+                        {data.date}
+                    </h5>
+                    <div className="flex justify-center p-10">
+                        <Image
+                            src={`/images/thumb/${data.src}.png`}
+                            className="object-fill"
+                            width={200}
+                            height={150}
+                            alt={`work_thumb_${data.key}`}
+                        />
                     </div>
-                    <h5>{data.desc}</h5>
-                    <h5>{data.date}</h5>
+                    <div className="flex flex-col gap-2">
+                        <h3
+                            className={`text-4xl font-bold text-text ${prompt.className} transition-all delay-100 duration-200 group-hover:text-white`}
+                        >
+                            {data.title}
+                        </h3>
+
+                        <h5 className="transition-all delay-100 duration-200 group-hover:text-white">{data.desc}</h5>
+
+                        <div className="flex flex-wrap gap-1">
+                            {data.skill.map((v, i) => (
+                                <span key={i} className="rounded-full bg-[#eeeeee] px-4 py-1">
+                                    {v}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-                <div className="flex justify-center p-10">
-                    <Image src={data.src} alt={`work_thumb_${data.key}`} />
-                </div>
+                <div className="absolute left-0 top-0 -z-10 mb-24 h-full w-full translate-y-full bg-[#d9d9d9] transition-all duration-200 ease-out group-hover:translate-y-0"></div>
+                <div className="absolute left-0 top-0 -z-10 mb-24 h-full w-full translate-y-full bg-[#666] transition-all delay-100 duration-200 ease-out group-hover:translate-y-0"></div>
+                <div
+                    className={`absolute left-0 top-0 -z-10 mb-24 h-full w-full translate-y-full bg-[#333] transition-all delay-200 duration-200 ease-out group-hover:translate-y-0`}
+                ></div>
             </div>
             {/* ))} */}
         </>
