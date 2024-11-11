@@ -1,48 +1,7 @@
 "use client";
 
+import { data } from "@/lib/data";
 import Item from "./Item";
-
-const data = [
-    {
-        src: "spolive",
-        key: 1,
-        title: "SPOLIVE",
-        skill: ["HTML", "CSS"],
-        desc: "Vue2.0 로 제작된 승부예측 베팅 사이트로 기존 운영되고 있던 사이트를 유지보수 및 추가 기능 퍼블리싱 100% 참여함",
-        date: "2022.06 ~",
-        bg: "#FFF9CA",
-    },
-
-    {
-        src: "next",
-        key: 1234,
-        title: "SPOLIVE Renewal",
-        skill: ["NEXT.js", "Vanilla Extract", "Typescript"],
-        desc: "Vue2.0으로 제작된 기존 스포라이브를 next.js로 리뉴얼하면서, 디자인 개선하여 좀 더 친근하고 편한 UI/UX를 만들었으며 본격적으로 프론트엔드 개발에 참여함",
-        date: "2024.08 ~",
-        bg: "#E7FFCA",
-    },
-
-    {
-        src: "gift",
-        key: 114,
-        title: "FURSYS MORE",
-        skill: ["JavaScript", "HTML", "CSS"],
-        desc: "SIDE PROJECT로 진행했던 상품권 매입 사이트로 Vanilla Javascript로 이벤트 처리, 모달 기능 구현 등 100% 퍼블리싱 작업",
-        date: "2024.08",
-        bg: "#E4FCFF",
-    },
-
-    {
-        src: "global",
-        key: 124,
-        title: "BETNEX",
-        skill: ["NEXT.js", "Vanilla Extract", "React.js", "Typescript"],
-        desc: "VUE2.js로 제작된 기존 스포라이브를 next.js로 바꿈",
-        date: "2024.08 ~",
-        bg: "#FFCAD7",
-    },
-];
 
 const Works = () => {
     return (
