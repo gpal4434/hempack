@@ -3,27 +3,15 @@ import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useRouter } from "next/navigation";
+import { DataValueProps } from "@/lib/data";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-interface DataValueProps {
-    src: string;
-    key: number;
-    title: string;
-    skill: [];
-    desc: string;
-    date: string;
-    color: string;
-    flex: string;
-    bg: string;
-}
-interface DataProps {
-    data: DataValueProps;
-}
-
-const Item = ({ data }: DataProps) => {
+const Item = ({ data }: DataValueProps) => {
+    const router = useRouter();
     const workRef = useRef(null);
 
     useEffect(() => {
@@ -54,6 +42,7 @@ const Item = ({ data }: DataProps) => {
             <div
                 ref={workRef}
                 className={`group relative mb-24 flex flex-[1_0_40%] cursor-pointer flex-col gap-2 overflow-hidden rounded-3xl bg-white shadow-2xl transition-all duration-200 ease-in-out even:-top-56`}
+                onClick={() => router.push(`/works/${data.key}`)}
             >
                 <div className="p-9">
                     <h5

@@ -111,7 +111,7 @@ const Intro = ({ hover, setHover }) => {
                         </h5>
                     </div>
                 </div>
-                <div className="relative flex h-screen basis-[50%] items-start justify-center bg-black">
+                <div className="relative flex h-screen basis-[50%] items-start justify-center bg-[black]">
                     <h3 className={`pt-36 text-center leading-[3] text-white xl:text-xl 2xl:text-3xl`}>
                         <span className="block pb-2 text-6xl">🥇</span>
                         <span className="font-bold">UI/UX 디자인</span> 역량을 갖춘
