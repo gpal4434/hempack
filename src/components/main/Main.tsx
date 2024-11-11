@@ -1,15 +1,14 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import Intro from "./Intro";
 import { prompt } from "@/app/fonts";
+import ClickMe from "./ClickMe";
 
 const Main = () => {
     const boxRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLSpanElement>(null);
     const textRef = useRef(null);
-    const [hover, setHover] = useState(false);
 
     useEffect(() => {
         if (textRef.current) {
@@ -81,7 +80,6 @@ const Main = () => {
         }
     }, []);
 
-    console.log("hover", hover);
     return (
         <>
             <div className="flex h-screen items-center p-10 pb-[15vw]">
@@ -111,27 +109,7 @@ const Main = () => {
                     Flexible Developer HYEMI
                 </h4>
             </div>
-            <div
-                className={`absolute bottom-5 right-5 flex h-60 w-60 cursor-pointer flex-col items-center justify-end gap-2 transition-all duration-[30ms]`}
-                title="introduce"
-            >
-                <span className="text-lg text-primary">Click Me!</span>
-                <video
-                    width={200}
-                    height={200}
-                    preload="true"
-                    style={{ borderRadius: 9999 }}
-                    autoPlay
-                    loop
-                    muted
-                    className="h-full w-full"
-                    onClick={() => setHover(true)}
-                >
-                    <source src="/my_emoji4.mp4" type="video/mp4" />
-                </video>
-            </div>
-
-            {hover && <Intro hover={hover} setHover={setHover} />}
+            <ClickMe />
         </>
     );
 };
