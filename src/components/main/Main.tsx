@@ -101,7 +101,7 @@ const Main = () => {
                     </span>
                 </div>
             </div>
-            <div className="rail fixed flex gap-10 overflow-hidden">
+            <div className="rail fixed bottom-24 flex gap-10 overflow-hidden">
                 <h4
                     className={`whitespace-nowrap text-9xl ${prompt.className} font-bold uppercase opacity-[0.03]`}
                     ref={textRef}
