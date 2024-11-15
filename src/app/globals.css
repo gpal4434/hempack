@@ -66,3 +66,39 @@
 ::-webkit-scrollbar-track {
     border-radius: 10px;
 }
+
+/* swiper 스와이퍼 */
+.pb-16.pt12 .swiper {
+    padding: 3rem 0 5rem;
+}
+.pb-16.pt12 .swiper-button-prev,
+.pb-16.pt12 .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #d9d9d9;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+}
+.pb-16.pt12 .swiper-button-prev:after,
+.pb-16.pt12 .swiper-button-next:after {
+    font-size: 15px;
+    color: #999;
+    font-weight: bold;
+}
+.pb-16.pt12 .swiper-button-prev {
+    right: 50px;
+    left: auto;
+}
+.pb-16.pt12 .swiper-button-next {
+    right: 0px;
+}
+
+.pb-16.pt12 .swiper-button-prev:hover,
+.pb-16.pt12 .swiper-button-next:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
