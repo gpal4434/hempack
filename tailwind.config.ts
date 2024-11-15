@@ -1,4 +1,3 @@
-import { BiBorderRadius } from "react-icons/bi";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -43,6 +42,11 @@ const config: Config = {
                         height: "50vh",
                     },
                 },
+            },
+            screens: {
+                sm: { raw: "(max-width: 360px)" },
+                md: { raw: "(max-width: 480px)" },
+                xl: { raw: "(max-width: 720px)" },
             },
         },
     },
