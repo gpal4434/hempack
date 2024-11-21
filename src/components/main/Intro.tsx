@@ -10,8 +10,9 @@ import figma from "/public/images/figma.png";
 import javascript from "/public/images/javascript.png";
 import { prompt } from "@/app/fonts";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IntroProps } from "../common/ClickMe";
 
-const Intro = ({ hover, setHover }) => {
+const Intro = ({ hover, setHover }: IntroProps) => {
     return (
         <>
             <button
@@ -122,9 +123,8 @@ const Intro = ({ hover, setHover }) => {
                 </div>
                 <div className={`absolute bottom-5 right-14 h-60 w-60 ${hover ? "animate-scale" : undefined}`}>
                     <video
-                        fill
                         preload="true"
-                        style={{ borderRadius: 9999 }}
+                        style={{ borderRadius: 9999, objectFit: "cover" }}
                         autoPlay
                         loop
                         muted

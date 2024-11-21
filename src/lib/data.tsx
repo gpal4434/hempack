@@ -1,7 +1,8 @@
+import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
 export interface DataValueProps {
-    src: string;
+    src: string | StaticImageData;
     key: number;
     title: string;
     skill: string[];

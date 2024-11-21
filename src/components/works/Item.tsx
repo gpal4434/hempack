@@ -6,11 +6,15 @@ import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { DataValueProps } from "@/lib/data";
 
+interface ItemProps {
+    data: DataValueProps; // data 속성에 DataValueProps 타입을 지정
+}
+
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-const Item = ({ data }: DataValueProps) => {
+const Item = ({ data }: ItemProps) => {
     const router = useRouter();
     const workRef = useRef(null);
 

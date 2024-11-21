@@ -26,10 +26,10 @@ const config: Config = {
             keyframes: {
                 opacity: {
                     "0%": {
-                        opacity: 0,
+                        opacity: "0", // 숫자값 사용
                     },
                     "100%": {
-                        opacity: 1,
+                        opacity: "1", // 숫자값 사용
                     },
                 },
                 scale: {

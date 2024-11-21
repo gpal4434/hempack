@@ -3,16 +3,16 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const RailText = () => {
-    const textRef = useRef(null);
+    const textRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
         if (textRef.current) {
             const text = textRef.current;
-            const clone = text.cloneNode(true); // 텍스트 복제
-            text.parentNode.appendChild(clone); // 복제한 텍스트를 원본 뒤에 추가
+            const clone = text.cloneNode(true) as HTMLHeadingElement; // 텍스트 복제
+            text.parentNode?.appendChild(clone); // 복제한 텍스트를 원본 뒤에 추가
             const totalWidth = text.offsetWidth; // 텍스트의 전체 너비
 
-            const animateText = (textElement) => {
+            const animateText = (textElement: HTMLElement) => {
                 gsap.fromTo(
                     textElement,
                     {

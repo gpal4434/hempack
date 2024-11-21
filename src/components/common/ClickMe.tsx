@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Intro from "./Intro";
-
+import Intro from "../main/Intro";
+export interface IntroProps {
+    hover: boolean;
+    setHover: React.Dispatch<React.SetStateAction<boolean>>;
+}
 const ClickMe = () => {
     const [hover, setHover] = useState(false);
 

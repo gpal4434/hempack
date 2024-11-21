@@ -15,8 +15,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useEffect, useState } from "react";
 import RailText from "../common/RailText";
+interface dataProps {
+    data: DataValueProps | undefined;
+}
 
-const Detail = ({ data }: DataValueProps) => {
+const Detail = ({ data }: dataProps) => {
     console.log("ddd", data);
     SwiperCore.use([Navigation, Scrollbar]);
     const router = useRouter();
@@ -33,6 +36,8 @@ const Detail = ({ data }: DataValueProps) => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
+
+    if (!data) return <div>데이터가 없습니다.</div>;
 
     return (
         <>
@@ -74,7 +79,7 @@ const Detail = ({ data }: DataValueProps) => {
                             src={`/images/thumb/${data.src}.png`}
                             className="object-fill p-10"
                             fill
-                            objectFit="contain"
+                            style={{ objectFit: "contain" }}
                             alt={`work_thumb_${data.key}`}
                         />
                     </div>
@@ -122,8 +127,8 @@ const Detail = ({ data }: DataValueProps) => {
                                             src={`/images/details/${v}.png`}
                                             layout="fill"
                                             fill
-                                            objectFit="contain"
-                                            alt={`img-${v.i}`}
+                                            style={{ objectFit: "contain" }}
+                                            alt={`img-${v}-${i}`}
                                             className="rounded-xl"
                                         />
                                     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Item from "./Item";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import spolive from "@/public/images/thumb/spolive.png";
