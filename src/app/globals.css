@@ -87,7 +87,7 @@
 .pb-16.pt12 .swiper-button-prev:after,
 .pb-16.pt12 .swiper-button-next:after {
     font-size: 15px;
-    color: #999;
+    color: rgb(255, 200, 55);
     font-weight: bold;
 }
 .pb-16.pt12 .swiper-button-prev {
@@ -100,5 +100,20 @@
 
 .pb-16.pt12 .swiper-button-prev:hover,
 .pb-16.pt12 .swiper-button-next:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(255, 200, 25, 0.5);
+}
+
+@media screen and (max-width: 720px) {
+    .pb-16.pt12 .swiper-button-prev,
+    .pb-16.pt12 .swiper-button-next {
+        bottom: 0;
+        top: auto;
+    }
+    .pb-16.pt12 .swiper-button-prev {
+        right: calc(50% + 10px);
+    }
+    .pb-16.pt12 .swiper-button-next {
+        left: 50%;
+        right: auto;
+    }
 }
