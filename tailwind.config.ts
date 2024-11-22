@@ -14,6 +14,7 @@ const config: Config = {
                 text: "#333",
                 border: "#d9d9d9",
                 surface: "#f5f5f5",
+                textGray: "#969696",
             },
             backgroundImage: {
                 "gradient-yellowred": "linear-gradient(90deg, #000 0%, #FFC837 100%)",
@@ -44,9 +45,8 @@ const config: Config = {
                 },
             },
             screens: {
-                sm: { raw: "(max-width: 360px)" },
-                md: { raw: "(max-width: 480px)" },
-                xl: { raw: "(max-width: 720px)" },
+                sm: { raw: "(max-width: 720px)" },
+                xl: { raw: "(min-width: 721px)" },
             },
         },
     },
