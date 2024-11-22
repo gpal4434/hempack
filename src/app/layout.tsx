@@ -4,7 +4,6 @@ import "@/app/globals.css";
 
 export const metadata: Metadata = {
     title: "HEMPACK ::: 웹 퍼블리셔 김혜미",
-    siteName: "HEMPACK | 혜미패키지",
     description: "웹 퍼블리셔(경력) 지원자 김혜미 포트폴리오입니다.",
     keywords: [
         "웹 퍼블리셔 포트폴리오",
