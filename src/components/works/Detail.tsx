@@ -23,19 +23,19 @@ const Detail = ({ data }: dataProps) => {
     console.log("ddd", data);
     SwiperCore.use([Navigation, Scrollbar]);
     const router = useRouter();
-    const [isMobile, setIsMobile] = useState(false);
+    // const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 720);
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         setIsMobile(window.innerWidth < 720);
+    //     };
+    //     handleResize();
+    //     window.addEventListener("resize", handleResize);
 
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("resize", handleResize);
+    //     };
+    // }, []);
 
     if (!data) return <div>데이터가 없습니다.</div>;
 
