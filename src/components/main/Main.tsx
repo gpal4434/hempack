@@ -52,7 +52,7 @@ const Main = () => {
                 ease: "power4.inOut",
             });
         }
-    }, []);
+    }, [isMobile]);
 
     return (
         <>

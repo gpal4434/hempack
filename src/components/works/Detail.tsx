@@ -13,7 +13,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useEffect, useState } from "react";
 import RailText from "../common/RailText";
 interface dataProps {
     data: DataValueProps | undefined;
