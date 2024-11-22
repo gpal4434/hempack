@@ -2,7 +2,7 @@
 
 import { data } from "@/lib/data";
 import Item from "./Item";
-const isMobile = window.innerWidth < 720;
+const isMobile = typeof window !== "undefined" && window.innerWidth < 720;
 
 const Works = () => {
     return (

@@ -9,7 +9,7 @@ import RailText from "../common/RailText";
 const Main = () => {
     const boxRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLSpanElement>(null);
-    const isMobile = window.innerWidth < 720;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 720;
 
     useEffect(() => {
         const items = boxRef.current?.querySelectorAll(".item");
