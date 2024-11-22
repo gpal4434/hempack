@@ -41,7 +41,7 @@ const RailText = () => {
     return (
         <div className="rail fixed bottom-24 flex gap-10 overflow-hidden">
             <h4
-                className={`whitespace-nowrap text-9xl ${prompt.className} font-bold uppercase opacity-[0.03]`}
+                className={`whitespace-nowrap text-5xl lg:text-9xl ${prompt.className} font-bold uppercase opacity-[0.03]`}
                 ref={textRef}
             >
                 Flexible Developer HYEMI

@@ -12,7 +12,7 @@ const ClickMe = () => {
     return (
         <>
             <div
-                className={`fixed bottom-5 right-5 z-[50] flex h-60 w-60 cursor-pointer flex-col items-center justify-end gap-2 transition-all duration-[30ms]`}
+                className={`fixed bottom-5 right-5 z-[50] flex h-24 w-24 cursor-pointer flex-col items-center justify-end gap-2 transition-all duration-[30ms] xl:h-60 xl:w-60`}
                 title="introduce"
             >
                 <span className="text-lg text-primary">Click Me!</span>

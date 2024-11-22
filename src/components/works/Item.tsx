@@ -45,7 +45,7 @@ const Item = ({ data }: ItemProps) => {
             {/* {data.map((item: DataValueProps) => ( */}
             <div
                 ref={workRef}
-                className={`group relative mb-24 flex flex-[1_0_40%] cursor-pointer flex-col gap-2 overflow-hidden rounded-3xl bg-white shadow-2xl transition-all duration-200 ease-in-out even:-top-56`}
+                className={`group relative mb-24 flex flex-[1_0_40%] cursor-pointer flex-col gap-2 overflow-hidden rounded-3xl bg-white shadow-2xl transition-all duration-200 ease-in-out xl:even:-top-56`}
                 onClick={() => router.push(`/works/${data.key}`)}
             >
                 <div className="p-9">

@@ -9,9 +9,13 @@ import RailText from "../common/RailText";
 const Main = () => {
     const boxRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLSpanElement>(null);
+    const isMobile = window.innerWidth < 720;
 
     useEffect(() => {
         const items = boxRef.current?.querySelectorAll(".item");
+        const yVal1 = isMobile ? -54 : -80;
+        const yVal2 = isMobile ? -100 : -180;
+
         if (barRef) {
             const tl = gsap.timeline({
                 yoyo: true,
@@ -38,12 +42,12 @@ const Main = () => {
             });
 
             tl.to(items, {
-                y: -85,
+                y: yVal1,
                 duration: 1.2,
                 ease: "power4.inOut",
                 visibility: "visible",
             }).to(items, {
-                y: -180,
+                y: yVal2,
                 duration: 1.2,
                 ease: "power4.inOut",
             });
@@ -54,19 +58,19 @@ const Main = () => {
         <>
             <div className="flex h-screen items-center p-10 pb-[15vw]">
                 <div className="flex flex-col gap-3">
-                    <span className="text-7xl font-thin">김혜미는</span>
-                    <div className="flex h-fit flex-col gap-3 overflow-hidden text-7xl font-bold">
-                        <div ref={boxRef} className="flex h-[100px] flex-col gap-4">
+                    <span className="text-3xl font-thin xl:text-7xl">김혜미는</span>
+                    <div className="flex h-fit flex-col gap-3 overflow-hidden text-3xl font-bold xl:text-7xl">
+                        <div ref={boxRef} className="flex h-[30px] flex-col gap-4 lg:h-[100px]">
                             <span className={`item leading-[1.1] ${prompt.className}`}>💡💡💡Interactive</span>
                             <span className={`item invisible leading-[1.1] ${prompt.className}`} aria-hidden={true}>
-                                👀 Responsive design
+                                👀 Responsive {!isMobile ? "design" : ""}
                             </span>
                             <span className={`item invisible leading-[1.1] ${prompt.className}`} aria-hidden={true}>
-                                Cross-device optimized 👑
+                                Cross-device {!isMobile ? "optimized 👑" : ""}
                             </span>
                         </div>
                     </div>
-                    <span className="text-7xl font-thin">
+                    <span className="text-3xl font-thin xl:text-7xl">
                         UI/UX 개발자입니다<span ref={barRef}>_</span>
                     </span>
                 </div>
