@@ -14,8 +14,18 @@ export const metadata: Metadata = {
         "UI 개발자",
         "UI UX 개발자 포트폴리오",
     ],
-    url: "https://hempack.vercel.app/",
-    ogImage: "/public/images/ogImage.png",
+    openGraph: {
+        title: "HEMPACK ::: 웹 퍼블리셔 김혜미",
+        description: "웹 퍼블리셔(경력) 지원자 김혜미 포트폴리오입니다.",
+        url: "https://hempack.vercel.app/",
+        siteName: "HEMPACK | 햄팩",
+        images: [
+            {
+                url: "/images/ogImage.png",
+                alt: "HEMPACK 웹 퍼블리셔 포트폴리오",
+            },
+        ],
+    },
 };
 
 export const viewport: Viewport = {
