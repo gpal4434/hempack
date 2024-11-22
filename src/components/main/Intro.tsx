@@ -18,7 +18,7 @@ const Intro = ({ hover, setHover }: IntroProps) => {
         <>
             <button
                 onClick={() => setHover(false)}
-                className="fixed right-5 top-5 z-[9999] overflow-hidden text-5xl text-white hover:text-gray-600"
+                className="fixed right-5 top-5 z-[9999] overflow-hidden text-5xl hover:text-gray-600 lg:text-white"
             >
                 <IoIosCloseCircleOutline />
             </button>
