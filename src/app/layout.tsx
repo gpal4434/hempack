@@ -3,6 +3,7 @@ import { IBMPlexSansKR, roboto } from "./fonts";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://hempack.vercel.app/"),
     title: "HEMPACK ::: 웹 퍼블리셔 김혜미",
     description: "웹 퍼블리셔(경력) 지원자 김혜미 포트폴리오입니다.",
     keywords: [
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
         siteName: "HEMPACK | 햄팩",
         images: [
             {
-                url: "/images/ogImage.png",
-                alt: "HEMPACK 웹 퍼블리셔 포트폴리오",
+                url: "/opengraph-image.png",
+                alt: "김혜미 포트폴리오",
             },
         ],
     },
