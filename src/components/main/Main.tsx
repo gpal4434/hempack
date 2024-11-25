@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { prompt } from "@/app/fonts";
 import ClickMe from "../common/ClickMe";
