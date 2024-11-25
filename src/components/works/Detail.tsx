@@ -114,7 +114,7 @@ const Detail = ({ data }: dataProps) => {
                             slidesPerView={1}
                             navigation={true}
                             breakpoints={{
-                                720: {
+                                1020: {
                                     slidesPerView: 1.5,
                                     centeredSlides: true,
                                     spaceBetween: 30,
@@ -146,7 +146,7 @@ const Detail = ({ data }: dataProps) => {
                             slidesPerView={1}
                             navigation={true}
                             breakpoints={{
-                                720: {
+                                1020: {
                                     slidesPerView: 5,
                                     spaceBetween: 30,
                                     pagination: true,

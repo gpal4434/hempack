@@ -45,8 +45,8 @@ const config: Config = {
                 },
             },
             screens: {
-                sm: { raw: "(max-width: 720px)" },
-                xl: { raw: "(min-width: 721px)" },
+                sm: { raw: "(max-width: 1020px)" },
+                xl: { raw: "(min-width: 1021px)" },
             },
         },
     },

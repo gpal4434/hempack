@@ -11,9 +11,11 @@ import javascript from "/public/images/javascript.png";
 import { prompt } from "@/app/fonts";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IntroProps } from "../common/ClickMe";
+import { useAtomValue } from "jotai";
+import { isMobileAtom } from "@/utils/isMobile/atom";
 
 const Intro = ({ hover, setHover }: IntroProps) => {
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 720;
+    const isMobile = useAtomValue(isMobileAtom);
     return (
         <>
             <button
@@ -25,7 +27,7 @@ const Intro = ({ hover, setHover }: IntroProps) => {
             <div
                 className={`fixed right-0 top-0 z-[999] flex h-screen w-screen items-start justify-center overflow-hidden bg-white sm:flex-col`}
             >
-                <div className="flex w-screen flex-col justify-center gap-1 p-10 lg:h-full lg:flex-grow">
+                <div className="flex w-screen flex-1 flex-col justify-center gap-1 p-5 lg:h-full lg:flex-grow">
                     <div className={`text-3xl font-bold text-[#333] lg:text-9xl ${prompt.className} label`}>
                         HEMPACK
                     </div>
@@ -64,38 +66,46 @@ const Intro = ({ hover, setHover }: IntroProps) => {
                             <span className="font-bold">총 6년 6개월</span>
                         </h5>
                     </div>
-                    <div className="pl-16 font-thin">
-                        <p className="sm:text-sm">
-                            스포피드(2년 6개월 재직중, 메인 퍼블리셔 + UI 개발 + 서브 프론트엔드 개발)
-                        </p>
-                        <p className="sm:text-sm">순수교육(2년 4개월, 메인 퍼블리셔)</p>
-                        <p className="sm:text-sm">펜타온, 벨모어(1년 10개월, 메인 퍼블리셔)</p>
-                        {!isMobile && (
-                            <div className="flex gap-2 py-3">
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={javascript} width={30} className="object-contain" alt="javascript" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={css} width={30} className="object-contain" alt="css" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={html} width={30} className="object-contain" alt="html" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={react} width={30} className="object-contain" alt="react" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={next} width={30} className="object-contain" alt="next" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={figma} width={30} className="object-contain" alt="figma" />
-                                </div>
-                                <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
-                                    <Image src={photoshop} width={30} className="object-contain" alt="photoshop" />
+                    {!isMobile && (
+                        <>
+                            <div className="pl-16 font-thin">
+                                <p className="sm:text-sm">
+                                    스포피드(2년 6개월 재직중, 메인 퍼블리셔 + UI 개발 + 서브 프론트엔드 개발)
+                                </p>
+                                <p className="sm:text-sm">순수교육(2년 4개월, 메인 퍼블리셔)</p>
+                                <p className="sm:text-sm">펜타온, 벨모어(1년 10개월, 메인 퍼블리셔)</p>
+
+                                <div className="flex gap-2 py-3">
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image
+                                            src={javascript}
+                                            width={30}
+                                            className="object-contain"
+                                            alt="javascript"
+                                        />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={css} width={30} className="object-contain" alt="css" />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={html} width={30} className="object-contain" alt="html" />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={react} width={30} className="object-contain" alt="react" />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={next} width={30} className="object-contain" alt="next" />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={figma} width={30} className="object-contain" alt="figma" />
+                                    </div>
+                                    <div className="flex h-16 w-16 justify-center rounded-full bg-[#e9e9e9] p-3">
+                                        <Image src={photoshop} width={30} className="object-contain" alt="photoshop" />
+                                    </div>
                                 </div>
                             </div>
-                        )}
-                    </div>
+                        </>
+                    )}
 
                     <div className="flex gap-1 sm:flex-col lg:gap-3 lg:text-xl">
                         <h5 className="flex gap-1">
@@ -105,7 +115,7 @@ const Intro = ({ hover, setHover }: IntroProps) => {
                         {!isMobile && <span> · </span>}
                         <h5 className="flex gap-1">
                             <span className="w-16 flex-shrink-0">자격증</span>
-                            <span className="flex-wrap text-base font-thin">
+                            <span className="flex-wrap text-base font-thin sm:text-sm">
                                 정보처리기사(2018)
                                 <br />
                                 웹디자인기능사(2018)
@@ -119,8 +129,8 @@ const Intro = ({ hover, setHover }: IntroProps) => {
                         </h5>
                     </div>
                 </div>
-                <div className="relative flex items-start justify-center bg-[black] sm:w-full sm:flex-col sm:items-center sm:pb-10 lg:h-screen lg:basis-[50%]">
-                    <h3 className={`pt-10 text-center leading-[3] text-white lg:pt-36 xl:text-xl 2xl:text-3xl`}>
+                <div className="relative flex items-start justify-center bg-[black] sm:w-full sm:flex-1 sm:flex-col sm:items-center lg:h-screen lg:basis-[50%]">
+                    <h3 className={`pt-5 text-center text-white lg:pt-36 lg:text-xl lg:leading-[3]`}>
                         <span className="block pb-2 text-6xl">🥇</span>
                         <span className="font-bold">UI/UX 디자인</span> 역량을 갖춘
                         <span className="font-bold"> Web Publisher</span>

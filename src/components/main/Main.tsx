@@ -1,15 +1,17 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { prompt } from "@/app/fonts";
 import ClickMe from "../common/ClickMe";
 import RailText from "../common/RailText";
+import { useAtomValue } from "jotai";
+import { isMobileAtom } from "@/utils/isMobile/atom";
 
 const Main = () => {
     const boxRef = useRef<HTMLDivElement>(null);
     const barRef = useRef<HTMLSpanElement>(null);
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 720;
+    const isMobile = useAtomValue(isMobileAtom);
 
     useEffect(() => {
         const items = boxRef.current?.querySelectorAll(".item");
@@ -61,7 +63,9 @@ const Main = () => {
                     <span className="text-3xl font-thin xl:text-7xl">김혜미는</span>
                     <div className="flex h-fit flex-col gap-3 overflow-hidden text-3xl font-bold xl:text-7xl">
                         <div ref={boxRef} className="flex h-[30px] flex-col gap-4 lg:h-[100px]">
-                            <span className={`item leading-[1.1] ${prompt.className}`}>💡💡💡Interactive</span>
+                            <span className={`item leading-[1.1] ${prompt.className}`}>
+                                {isMobile ? "💡💡" : "💡💡💡"}Interactive
+                            </span>
                             <span className={`item invisible leading-[1.1] ${prompt.className}`} aria-hidden={true}>
                                 👀 Responsive {!isMobile ? "design" : ""}
                             </span>

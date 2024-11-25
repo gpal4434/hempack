@@ -2,9 +2,12 @@
 
 import { data } from "@/lib/data";
 import Item from "./Item";
-const isMobile = typeof window !== "undefined" && window.innerWidth < 720;
+import { useAtomValue } from "jotai";
+import { isMobileAtom } from "@/utils/isMobile/atom";
 
 const Works = () => {
+    const isMobile = useAtomValue(isMobileAtom);
+    console.log("isMobile", isMobile);
     return (
         <>
             <div className="relative min-h-[1000px] after:clear-both after:block xl:pt-52">
